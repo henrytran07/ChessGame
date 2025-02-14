@@ -26,6 +26,8 @@ Follow these steps to set up and run the project on your local machine.
 
 • Pawn: P1, P2, P3, ..., P16
 
+### **Chess Board Screenshot**
+• ![Chessboard](./images/chess_board_img.png)
 ---
 
 ## **Cloning the Repository**
