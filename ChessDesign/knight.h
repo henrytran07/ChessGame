@@ -55,9 +55,8 @@ namespace chess_game::knight {
                 return true; 
             }
 
-            void legalMove(set<Position>& found, int x, int y, const Position& original_pos, bool checkmate_usage = false) const {
+            void legalMove(set<Position>& found, int x, int y, const Position& original_pos, bool checkmate_usage = false)  {
                 Position anticipated_position(x, y);
-                Position pos_difference = anticipated_position - original_pos;
                 // x + 2 && y + 1 || x - 2 && y + 1  || x + 1 && y + 2 || x - 1 && y + 2 || x - 1 && y - 2 || x + 1 && y - 2   
                 if (!findLegalMove(found, anticipated_position, original_pos, checkmate_usage))
                     return; 

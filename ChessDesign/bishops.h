@@ -54,7 +54,7 @@ namespace chess_game::bishop {
                 return true; 
             }
 
-            void legalMove(set<Position>& found, int x, int y, const Position& original_pos, bool checkmate_usage = false) const {
+            void legalMove(set<Position>& found, int x, int y, const Position& original_pos, bool checkmate_usage = false)  {
                 Position anticipated_pos(x, y);
 
                 if (!findLegalMove(found, anticipated_pos, original_pos, checkmate_usage)) 

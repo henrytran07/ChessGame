@@ -32,7 +32,7 @@ namespace chess_game::pawn {
             }
 
             bool findLegalMove(set<Position>& found, const Position& anticipated_pos, 
-                                const Position& original_pos, bool checkmate_usage = false) {
+                                            const Position& original_pos, bool checkmate_usage = false) const {
                 Position d_position = anticipated_pos - original_pos; 
 
                 d_position.GetX() = abs(d_position.GetX());
@@ -40,8 +40,8 @@ namespace chess_game::pawn {
                 if (anticipated_pos == original_pos)
                     return true; 
 
-                if (!(d_position.GetX() == 0 && d_position.GetY() == 1 || 
-                    d_position.GetX() == 1 && d_position.GetY() == 1 || first_step && d_position.GetX() == 0 && d_position.GetY() == 2)) 
+                if (!((d_position.GetX() == 0 && d_position.GetY() == 1) || 
+                    (d_position.GetX() == 1 && d_position.GetY() == 1) || (first_step && d_position.GetX() == 0 && d_position.GetY() == 2))) 
                     return false;  
 
                 if (first_step) {
@@ -52,8 +52,8 @@ namespace chess_game::pawn {
                     return false;
 
                 if (Base::board[Base::position_map[anticipated_pos]]) {
-                    if (d_position.GetY() == 1 && d_position.GetX() == 0 || 
-                        first_step && d_position.GetX() == 0 && d_position.GetY() == 2)  {
+                    if ((d_position.GetY() == 1 && d_position.GetX() == 0) || 
+                        (first_step && d_position.GetX() == 0 && d_position.GetY() == 2))  {
                         return false; 
                     }
 
@@ -76,7 +76,7 @@ namespace chess_game::pawn {
                 return true; 
             }
 
-            void legalMove(set<Position>& found, int x, int y, const Position& original_pos, bool checkmate_usage = false) { 
+            void legalMove(set<Position>& found, int x, int y, const Position& original_pos, bool checkmate_usage = false)  { 
                 Position anticipated_pos(x, y);
 
                 if (!findLegalMove(found, anticipated_pos, original_pos, checkmate_usage))

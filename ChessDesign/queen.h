@@ -36,7 +36,7 @@ namespace chess_game::queen {
                 return false; 
             }
 
-            void legalMove(set<Position>& found, int x, int y, const Position& original_pos, bool checkmate_usage = false) const override {
+            void legalMove(set<Position>& found, int x, int y, const Position& original_pos, bool checkmate_usage = false) override {
                 Position anticipated_pos(x, y);
                 if (!findLegalMove(found, anticipated_pos, original_pos, checkmate_usage)) 
                     return; 

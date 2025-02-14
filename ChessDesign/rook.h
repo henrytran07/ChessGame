@@ -39,7 +39,7 @@ namespace chess_game::rook {
                 return true; 
             }
 
-            void legalMove(set<Position>& found, int x, int y, const Position& original_spot, bool checkmate_usage = false) const {    
+            void legalMove(set<Position>& found, int x, int y, const Position& original_spot, bool checkmate_usage = false)  {    
                 Position anticipated_position(x, y);
 
                 if (!findLegalMove(found, anticipated_position, original_spot, checkmate_usage)) 

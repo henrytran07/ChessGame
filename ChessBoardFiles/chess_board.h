@@ -440,8 +440,7 @@ namespace chess_game::chess_board {
             }
 
             bool game_over() const {
-                bool stale_mate = false; 
-                if (game_over::insufficient_material() || fifty_move_rule && pawn_move == 50) {
+                if (game_over::insufficient_material() || (fifty_move_rule && pawn_move == 50)) {
                     cout << "tie game due to deadend rule/ 50 move rule" << endl;
                     return true; 
                 }
@@ -451,12 +450,9 @@ namespace chess_game::chess_board {
             bool stalemate(int its_team) {
                 if (!users.check_mate_map.at(its_team)) {
                     const set<ChessPosition>& its_set = (its_team == 1 ? piece_pos_set_1 : piece_pos_set_2);
-                    const set<ChessPosition>& rival_set = (its_team == 1 ? piece_pos_set_2 : piece_pos_set_1);
 
                     ChessPosition king_pair; 
                     set<Position> temp_possible_move; 
-
-                    bool all_position_is_checkmate = true; 
 
                     bool king_found = false;
                     for (const auto& piece : its_set) {

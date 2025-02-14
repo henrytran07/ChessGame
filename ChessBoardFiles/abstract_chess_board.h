@@ -107,20 +107,20 @@ class Abstract_Chess_Board {
         class Piece {
             public: 
                 string name;    
+                int team;
                 bool is_king; 
-                bool is_pawn = false; 
-                int team;  
+                bool is_pawn = false;   
                 typename set<ChessPosition>::iterator pos;
                 typename set<ChessPosition>::iterator king_pointer; 
 
                 set<Position> found_pair; 
-                Piece(string n = string(), int no = int(), bool king_bool = false) : name{n}, team{no}, is_king{king_bool} {}
+                Piece(string n = string(), int no = int(), bool king_bool = false) : name{n}, team{no}, is_king{king_bool}{}
 
                 virtual void determineMove() {
                     cout << "I am here" << endl;
                 } 
 
-                virtual void legalMove(set<Position>& found, int x, int y, const Position& original_spot, bool checkmate_usage = false) const {} 
+                virtual void legalMove(set<Position>& found, int x, int y, const Position& original_spot, bool checkmate_usage = false)  {} 
 
                 bool operator<(const Piece& other) const {
                     return (size_t(this) < size_t(&other));
@@ -135,7 +135,7 @@ class Abstract_Chess_Board {
                     return false; 
                 }
 
-                bool checkMate(const Position& projectile_future_pos) const {
+                bool checkMate(const Position& projectile_future_pos)  {
                     set<Position> found;  
 
                     legalMove(found, projectile_future_pos.GetX(), projectile_future_pos.GetY(), projectile_future_pos, true);
@@ -191,7 +191,7 @@ class Abstract_Chess_Board {
                     return false; 
                 }
 
-                void printSet(const set<Position>& found_pair) {} 
+                virtual ~Piece() {}
         };
         
         friend Piece; 

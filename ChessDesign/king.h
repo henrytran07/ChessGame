@@ -68,7 +68,7 @@ namespace chess_game::king {
                 return true; 
             }
 
-            void legalMove(set<Position>& found, int x, int y, const Position& original_pos, bool checkmate_usage = false) const {
+            void legalMove(set<Position>& found, int x, int y, const Position& original_pos, bool checkmate_usage = false)  {
                 Position anticipated_position(x, y);
 
                 if (!findLegalMove(found, anticipated_position, original_pos, checkmate_usage))
