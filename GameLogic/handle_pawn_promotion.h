@@ -1,10 +1,11 @@
 #pragma once 
 
-#include "abstract_chess_board.h"
-#include "rook.h"
-#include "knight.h"
-#include "bishops.h"
-#include "queen.h"
+#include "../ChessBoardFiles/abstract_chess_board.h"
+
+#include "../ChessDesign/rook.h"
+#include "../ChessDesign/knight.h"
+#include "../ChessDesign/bishops.h"
+#include "../ChessDesign/queen.h"
 
 #include <algorithm>
 

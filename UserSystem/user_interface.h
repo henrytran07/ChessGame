@@ -1,7 +1,6 @@
 #pragma once 
 
-#include "abstract_chess_board.h"
-#include "chess_board.h"
+#include "../ChessBoardFiles/abstract_chess_board.h"
 
 #include <iostream>
 #include <iomanip>

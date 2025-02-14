@@ -1,18 +1,18 @@
 #pragma once 
 
 #include "abstract_chess_board.h"
-#include "rook.h"
-#include "user_interface.h"
-#include "king.h"
-#include "knight.h"
-#include "bishops.h"
-#include "queen.h"
-#include "pawn.h"
-#include "user_validation.h"
-#include "initialize_step.h"
-#include "handle_pawn_promotion.h"
-#include "game_over.h"
 #include "print_chess_game.h"
+#include "../ChessDesign/rook.h"
+#include "../ChessDesign/king.h"
+#include "../ChessDesign/knight.h"
+#include "../ChessDesign/queen.h"
+#include "../ChessDesign/bishops.h"
+#include "../ChessDesign/pawn.h"
+#include "../UserSystem/user_interface.h"
+#include "../UserSystem/user_validation.h"
+#include "../GameLogic/initialize_step.h"
+#include "../GameLogic/game_over.h"
+#include "../GameLogic/handle_pawn_promotion.h"
 
 #include <unistd.h>
 #include <poll.h>

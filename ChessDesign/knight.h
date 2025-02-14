@@ -1,7 +1,7 @@
 #pragma once 
 
-#include "abstract_chess_board.h"
-#include "user_interface.h"
+#include "../ChessBoardFiles/abstract_chess_board.h"
+// #include "../UserSystem/user_interface.h"
 
 #include <utility> 
 #include <vector>

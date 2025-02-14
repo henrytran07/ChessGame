@@ -1,6 +1,6 @@
 #pragma once 
 
-#include "abstract_chess_board.h"
+#include "../ChessBoardFiles/abstract_chess_board.h"
 
 #include <cstdlib>
 #include <vector> 
