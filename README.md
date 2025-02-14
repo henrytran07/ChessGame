@@ -36,4 +36,8 @@ Follow these steps to set up and run the project on your local machine.
 
     ./build/chess_game 
 
+## Cleaning up Build Files 
+
+    make clean
+
 
